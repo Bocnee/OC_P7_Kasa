@@ -1,17 +1,20 @@
+// React and React Router components
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+// Global Styles
+import './styles/utils/reset.css';
+
+// Components
+import Header from './components/Header';
+
+// Variables
+const root = document.getElementById('root');
+
+createRoot(root).render(
+   <React.StrictMode>
+      <Header />
+      <h1>Mon route vide !</h1>
+   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
