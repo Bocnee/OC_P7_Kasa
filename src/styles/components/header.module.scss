@@ -1,0 +1,106 @@
+.headerWrap {
+   width: 100%;
+   max-width: 1400px;
+   margin: 0 auto;
+   padding: 30px;
+}
+
+.headerFlex {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 25px;
+}
+
+.navWrap {
+   display: flex;
+   justify-content: space-between;
+   gap: 50px;
+   font-size: 1.5rem;
+   &__item {
+      text-align: center;
+      position: relative;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &:after {
+         position: absolute;
+         content: '';
+         height: 2px;
+         width: 0%;
+         bottom: 0;
+         left: 0;
+         background-color: var(--main-color);
+         transition: all 0.5s ease-in;
+      }
+      &:hover:after {
+         width: 100%;
+      }
+   }
+}
+.navWrap__item__active {
+   text-align: center;
+   position: relative;
+   &:after {
+      position: absolute;
+      content: '';
+      height: 2px;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      background-color: var(--main-color);
+   }
+}
+
+.logoWrap {
+   width: 150px;
+   &__logo {
+      width: 100%;
+      max-width: auto;
+   }
+}
+
+@media screen and (max-width: 750px) {
+   .navWrap {
+      text-transform: uppercase;
+      &__item:after {
+         height: 1px;
+      }
+      &__item__active:after {
+         height: 1px;
+      }
+   }
+
+   .logoWrap {
+      max-width: 150px;
+      width: 40%;
+      min-width: 80px;
+      &__logo {
+         width: 100%;
+         max-width: auto;
+      }
+   }
+
+   .navWrap {
+      gap: 15px;
+      font-size: 1rem;
+      min-width: 80px;
+      &__item {
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+      }
+   }
+
+   .headerWrap {
+      padding: 20px;
+   }
+}
+
+@media screen and (max-width: 300px) {
+   .navWrap {
+      gap: 10px;
+      font-size: 10px;
+   }
+}
