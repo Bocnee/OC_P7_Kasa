@@ -1,26 +1,26 @@
 import { NavLink, useLocation } from 'react-router-dom';
-import headerClasses from '../../styles/components/header.module.scss';
+import classes from '../../styles/components/header.module.scss';
 import logo from '../../assets/logo.svg';
 
 function Header() {
    const pathname = useLocation().pathname;
    return (
-      <header className={headerClasses.headerWrap}>
-         <div className={headerClasses.headerFlex}>
-            <h1 className={headerClasses.logoWrap}>
+      <header className={classes.headerWrap}>
+         <div className={classes.headerFlex}>
+            <h1 className={classes.logoWrap}>
                <img
                   draggable="false"
-                  className={headerClasses.logoWrap__logo}
+                  className={classes.logoWrap__logo}
                   src={logo}
                   alt="Logo de Kasa, Kasa écrit en toute lettre avec une maison pour remplacer le premier A"
                />
             </h1>
-            <nav className={headerClasses.navWrap}>
+            <nav className={classes.navWrap}>
                <NavLink
                   className={
                      pathname === '/'
-                        ? headerClasses.navWrap__item__active
-                        : headerClasses.navWrap__item
+                        ? `${classes.navWrap__item} ${classes.navWrap__item__active}`
+                        : classes.navWrap__item
                   }
                   to="/">
                   Accueil
@@ -28,8 +28,8 @@ function Header() {
                <NavLink
                   className={
                      pathname === '/about'
-                        ? headerClasses.navWrap__item__active
-                        : headerClasses.navWrap__item
+                        ? `${classes.navWrap__item} ${classes.navWrap__item__active}`
+                        : classes.navWrap__item
                   }
                   to="/about">
                   A Propos

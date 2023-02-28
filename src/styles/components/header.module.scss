@@ -1,3 +1,5 @@
+@import '../utils/variables/colors.scss';
+
 .headerWrap {
    width: 100%;
    max-width: 1400px;
@@ -31,25 +33,15 @@
          width: 0%;
          bottom: 0;
          left: 0;
-         background-color: var(--main-color);
+         background-color: $mainColor;
          transition: all 0.5s ease-in;
       }
       &:hover:after {
          width: 100%;
       }
-   }
-}
-.navWrap__item__active {
-   text-align: center;
-   position: relative;
-   &:after {
-      position: absolute;
-      content: '';
-      height: 2px;
-      width: 100%;
-      bottom: 0;
-      left: 0;
-      background-color: var(--main-color);
+      &__active:after {
+         width: 100%;
+      }
    }
 }
 
