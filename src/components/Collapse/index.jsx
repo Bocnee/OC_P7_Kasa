@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from '../../styles/components/toggleBar.module.scss';
+import styles from '../../styles/components/collapse.module.scss';
 import chevron from '../../assets/arrow.svg';
 
 function ToggleBar({ title, description }) {

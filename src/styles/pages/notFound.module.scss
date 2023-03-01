@@ -1,0 +1,56 @@
+@import '../utils/variables/colors.scss';
+.wrap {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   padding: 150px 0 100px 0;
+}
+
+.error {
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   gap: 150px;
+   &__title {
+      font-weight: 700;
+      font-size: 288px;
+      line-height: 100px;
+   }
+   &__paragraph {
+      font-size: 36px;
+   }
+}
+
+.link {
+   font-size: 18px;
+   text-decoration: underline;
+   transition: all 0.3s;
+   &:hover {
+      color: lighten($mainColor, 10);
+   }
+}
+
+.break {
+   display: none;
+}
+
+@media screen and (max-width: 750px) {
+   .error {
+      gap: 10px;
+      &__title {
+         font-size: 96px;
+      }
+      &__paragraph {
+         font-size: 18px;
+      }
+   }
+
+   .link {
+      font-size: 14px;
+   }
+
+   .break {
+      display: block;
+   }
+}
