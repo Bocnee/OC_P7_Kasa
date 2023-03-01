@@ -26,6 +26,25 @@
    margin: 60px 0;
 }
 
+.banner {
+   height: 223px;
+   background-color: #000;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 25px;
+   margin: 20px 0;
+   &__img {
+      height: 100%;
+      width: 100%;
+      border-radius: 25px;
+      object-fit: cover;
+      opacity: 0.7;
+      position: absolute;
+   }
+}
+
 @media screen and (max-width: 750px) {
    .banner {
       height: 111px;
@@ -38,5 +57,10 @@
    }
    .breakMobile {
       display: block;
+   }
+   .cardWrap {
+      background: none;
+      padding: 0;
+      margin: 30px 0;
    }
 }
