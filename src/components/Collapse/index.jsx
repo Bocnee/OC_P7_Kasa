@@ -10,18 +10,22 @@ function ToggleBar({ title, description }) {
    return (
       <div>
          <div className={styles.toggle} onClick={handleToggle}>
-            <h3 className={styles.toggle__title}>{title}</h3>
+            <h2 className={styles.toggle__title}>{title}</h2>
             <div
-               aria-expanded={!toggle}
                className={
                   toggle
-                     ? `${styles.toggle__chevron}`
-                     : `${styles.toggle__chevron}`
+                     ? `${styles.toggle__chevron} ${styles.toggle__chevron__active}`
+                     : styles.toggle__chevron
                }>
                <img src={chevron} alt="flèche" />
             </div>
          </div>
-         <div className={styles.description} aria-expanded={toggle}>
+         <div
+            className={
+               toggle
+                  ? `${styles.description} ${styles.description__active}`
+                  : styles.description
+            }>
             {toggle && (
                <li className={styles.description__list}>{description}</li>
             )}

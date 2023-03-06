@@ -14,6 +14,7 @@ function Home() {
                src={homeImg}
                alt="fond avec des montagnes"
                className={styles.banner__img}
+               draggable="false"
             />
             <h2 className={styles.banner__title}>
                Chez vous, <br className={styles.breakMobile} />
@@ -22,7 +23,12 @@ function Home() {
          </div>
          <div className={styles.cardWrap}>
             {logementsList.map((log) => (
-               <Card key={log.id} title={log.title} cover={log.cover} />
+               <Card
+                  key={log.id}
+                  title={log.title}
+                  cover={log.cover}
+                  id={log.id}
+               />
             ))}
          </div>
       </div>

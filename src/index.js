@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
+import Logement from './pages/Logement';
 
 // Variables
 const root = document.getElementById('root');
@@ -26,6 +27,7 @@ createRoot(root).render(
             <Route path="/*" element={<NotFound />} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/logement/:id" element={<Logement />} />
          </Routes>
          <Footer />
       </BrowserRouter>

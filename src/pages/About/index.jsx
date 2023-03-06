@@ -15,6 +15,7 @@ function About() {
                src={aboutImg}
                alt="fond avec des montagnes"
                className={styleBanner.banner__img}
+               draggable="false"
             />
          </div>
          <div className={styles.toggleWrap}>

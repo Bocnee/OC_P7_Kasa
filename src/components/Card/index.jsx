@@ -1,13 +1,19 @@
 import propTypes from 'prop-types';
 import defaultPic from '../../assets/defaultPic.png';
 import styles from '../../styles/components/card.module.scss';
+import { Link } from 'react-router-dom';
 
-function Card({ title, cover }) {
+function Card({ title, cover, id }) {
    return (
-      <article className={styles.card}>
-         <img src={cover} alt={title} className={styles.img} />
+      <Link className={styles.card} to={`/logement/${id}`}>
+         <img
+            src={cover}
+            alt={title}
+            className={styles.img}
+            draggable="false"
+         />
          <h3 className={styles.title}>{title}</h3>
-      </article>
+      </Link>
    );
 }
 
