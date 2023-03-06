@@ -1,6 +1,8 @@
 import starColored from '../../assets/starColored.svg';
 import starNeutral from '../../assets/starNeutral.svg';
 
+import styles from '../../styles/components/rating.module.scss';
+
 function Rating({ rate }) {
    const redStars = Array(5).fill(
       <img src={starColored} alt="étoile(s) rouge(s) qui indique la note" />
@@ -13,12 +15,16 @@ function Rating({ rate }) {
    const emptyStars = greyStars.slice(rate);
 
    return (
-      <div>
+      <div className={styles.star}>
          {fullStars.map((star) => (
-            <span key={Math.random()}>{star}</span>
+            <span className={styles.star__one} key={Math.random()}>
+               {star}
+            </span>
          ))}
          {emptyStars.map((star) => (
-            <span key={Math.random()}>{star}</span>
+            <span className={styles.star__one} key={Math.random()}>
+               {star}
+            </span>
          ))}
       </div>
    );

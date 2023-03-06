@@ -18,17 +18,15 @@ function Gallery({ pictures, title }) {
    };
 
    useEffect(() => {
-      if (length > 1) {
-         if (timer.current) {
-            clearTimeout(timer.current);
-         }
-         timer.current = setTimeout(() => {
-            if (auto) {
-               setCurrent((t) => (t === length - 1 ? 0 : t + 1));
-            }
-         }, 3000);
-         return () => clearTimeout(timer.current);
+      if (timer.current) {
+         clearTimeout(timer.current);
       }
+      timer.current = setTimeout(() => {
+         if (auto) {
+            setCurrent((t) => (t === length - 1 ? 0 : t + 1));
+         }
+      }, 5000);
+      return () => clearTimeout(timer.current);
    }, [auto, length]);
 
    return (
@@ -51,7 +49,7 @@ function Gallery({ pictures, title }) {
          ) : null}
          {pictures.map((pic, index) => (
             <div
-               key={Math.random()}
+               key={index}
                className={
                   index === current
                      ? `${styles.imgWrap} ${styles.imgWrap__current}`
@@ -60,11 +58,7 @@ function Gallery({ pictures, title }) {
                {index === current && (
                   <img
                      draggable="false"
-                     className={
-                        index === current
-                           ? `${styles.img} ${styles.img__current}`
-                           : styles.imgWrap
-                     }
+                     className={styles.img}
                      src={pic}
                      alt={title}
                   />

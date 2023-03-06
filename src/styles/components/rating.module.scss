@@ -1,0 +1,18 @@
+.star {
+   text-align: right;
+   &__one {
+      margin: 0 10px;
+      & img {
+         height: 30px;
+      }
+   }
+}
+
+@media screen and (max-width: 750px) {
+   .star__one {
+      margin: 0 5px;
+      & img {
+         height: 15px;
+      }
+   }
+}
