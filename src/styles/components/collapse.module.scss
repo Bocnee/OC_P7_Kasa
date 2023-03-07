@@ -79,4 +79,25 @@
       font-size: 1rem;
       line-height: 20px;
    }
+
+   .toggle {
+      padding: 6px 11px;
+      &__name {
+         font-size: 13px;
+         font-weight: 500;
+      }
+   }
+
+   .description {
+      padding: 23px 11px;
+      &__txt {
+         font-size: 12px;
+         line-height: 17.11px;
+      }
+   }
+
+   .toggleWrap {
+      flex-direction: column;
+      gap: 20px;
+   }
 }
