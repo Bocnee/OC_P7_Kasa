@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from '../../styles/components/collapse.module.scss';
+import styles from '../../styles/components/toggleBar.module.scss';
 import chevron from '../../assets/arrow.svg';
 
 function ToggleBar({ description, equipement }) {
@@ -16,14 +16,14 @@ function ToggleBar({ description, equipement }) {
          <div>
             <div className={styles.toggle} onClick={handleToggle}>
                <div className={styles.toggle__name}>Description</div>
-               <div
+               <p
                   className={
                      toggleDesc
                         ? `${styles.toggle__chevron} ${styles.toggle__chevron__active}`
                         : styles.toggle__chevron
                   }>
                   <img src={chevron} alt="flèche" />
-               </div>
+               </p>
             </div>
             <div
                className={
@@ -43,14 +43,14 @@ function ToggleBar({ description, equipement }) {
                ) : (
                   <p className={styles.toggle__name}>Équipement</p>
                )}
-               <div
+               <p
                   className={
                      toggleEqu
                         ? `${styles.toggle__chevron} ${styles.toggle__chevron__active}`
                         : styles.toggle__chevron
                   }>
                   <img src={chevron} alt="flèche" />
-               </div>
+               </p>
             </div>
             <div
                className={
