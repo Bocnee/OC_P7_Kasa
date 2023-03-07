@@ -46,3 +46,21 @@
       list-style-type: none;
    }
 }
+
+@media screen and (max-width: 750px) {
+   .toggle {
+      padding: 6px 12px;
+      &__title {
+         font-size: 13px;
+      }
+      &__chevron img {
+         width: 20px;
+      }
+   }
+
+   .description {
+      padding: 17px 11px;
+      font-size: 12px;
+      line-height: 17.11px;
+   }
+}
