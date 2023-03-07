@@ -3,6 +3,7 @@ import styleBanner from '../../styles/utils/parts/banners.module.scss';
 import styles from '../../styles/pages/about.module.scss';
 
 import Collapse from '../../components/Collapse';
+
 import { ToggleInfo } from '../../datas/aboutList';
 
 import aboutImg from '../../assets/aboutImg.png';

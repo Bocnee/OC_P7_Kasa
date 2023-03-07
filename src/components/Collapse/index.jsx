@@ -1,5 +1,7 @@
 import { useState } from 'react';
+
 import styles from '../../styles/components/collapse.module.scss';
+
 import chevron from '../../assets/arrow.svg';
 
 function Collapse({ title, description }) {
@@ -7,6 +9,7 @@ function Collapse({ title, description }) {
    const handleToggle = () => {
       setToggle(!toggle);
    };
+
    return (
       <div>
          <div className={styles.toggle} onClick={handleToggle}>

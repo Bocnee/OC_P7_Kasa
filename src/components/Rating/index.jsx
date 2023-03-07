@@ -7,12 +7,13 @@ function Rating({ rate }) {
    const redStars = Array(5).fill(
       <img src={starColored} alt="étoile(s) rouge(s) qui indique la note" />
    );
-   const fullStars = redStars.slice(5 - rate);
 
    const greyStars = Array(5).fill(
       <img src={starNeutral} alt="étoile(s) grise(s)" />
    );
+
    const emptyStars = greyStars.slice(rate);
+   const fullStars = redStars.slice(5 - rate);
 
    return (
       <div className={styles.star}>

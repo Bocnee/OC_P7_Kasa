@@ -2,6 +2,7 @@ import pages from '../../styles/utils/parts/pagesWrap.module.scss';
 import styles from '../../styles/pages/home.module.scss';
 
 import { logementsList } from '../../datas/logementsList';
+
 import Card from '../../components/Card';
 
 import homeImg from '../../assets/accueilImg.png';

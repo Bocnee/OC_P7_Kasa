@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
+
 import chevronRight from '../../assets/chevronGalleryR.svg';
 import chevronLeft from '../../assets/chevronGalleryL.svg';
+
 import styles from '../../styles/components/gallery.module.scss';
 
 function Gallery({ pictures, title }) {

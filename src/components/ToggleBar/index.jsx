@@ -1,16 +1,21 @@
 import { useState } from 'react';
+
 import styles from '../../styles/components/toggleBar.module.scss';
+
 import chevron from '../../assets/arrow.svg';
 
 function ToggleBar({ description, equipement }) {
+   const [toggleEqu, setToggleEqu] = useState(0);
    const [toggleDesc, setToggleDesc] = useState(0);
+
    const handleToggle = () => {
       setToggleDesc(!toggleDesc);
    };
-   const [toggleEqu, setToggleEqu] = useState(0);
+
    const handleToggleEqu = () => {
       setToggleEqu(!toggleEqu);
    };
+
    return (
       <div className={styles.toggleWrap}>
          <div>

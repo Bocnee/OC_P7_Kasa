@@ -1,9 +1,12 @@
 import { NavLink, useLocation } from 'react-router-dom';
+
 import classes from '../../styles/components/header.module.scss';
+
 import logo from '../../assets/logo.svg';
 
 function Header() {
    const pathname = useLocation().pathname;
+
    return (
       <header className={classes.headerWrap}>
          <div className={classes.headerFlex}>

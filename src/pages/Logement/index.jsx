@@ -13,9 +13,11 @@ import NotFound from '../NotFound';
 function Logement() {
    const { id } = useParams();
    const logement = logementsList.find((log) => log.id === id);
+
    if (!logement) {
       return <NotFound />;
    }
+
    return (
       <div className={pages.wrap}>
          <Gallery

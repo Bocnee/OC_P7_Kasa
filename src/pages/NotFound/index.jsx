@@ -1,6 +1,7 @@
 import pages from '../../styles/utils/parts/pagesWrap.module.scss';
-import { Link } from 'react-router-dom';
 import styles from '../../styles/pages/notFound.module.scss';
+
+import { Link } from 'react-router-dom';
 
 function NotFound() {
    return (

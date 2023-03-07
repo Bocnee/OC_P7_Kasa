@@ -1,7 +1,9 @@
 import propTypes from 'prop-types';
-import defaultPic from '../../assets/defaultPic.png';
-import styles from '../../styles/components/card.module.scss';
 import { Link } from 'react-router-dom';
+
+import styles from '../../styles/components/card.module.scss';
+
+import defaultPic from '../../assets/defaultPic.png';
 
 function Card({ title, cover, id }) {
    return (
@@ -17,6 +19,7 @@ function Card({ title, cover, id }) {
    );
 }
 
+// proptypes par défaut
 Card.propTypes = {
    title: propTypes.string.isRequired,
    cover: propTypes.string.isRequired,

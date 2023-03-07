@@ -4,7 +4,7 @@
    width: 100%;
    max-width: 1240px;
    margin: 0 auto;
-   padding: 30px;
+   padding: 40px 50px;
 }
 
 .headerFlex {
@@ -22,7 +22,6 @@
    &__item {
       text-align: center;
       position: relative;
-
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -46,7 +45,7 @@
 }
 
 .logoWrap {
-   width: 150px;
+   height: 62px;
    &__logo {
       width: 100%;
       max-width: auto;
