@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from '../../styles/components/collapse.module.scss';
 import chevron from '../../assets/arrow.svg';
 
-function ToggleBar({ title, description }) {
+function Collapse({ title, description }) {
    const [toggle, setToggle] = useState(false);
    const handleToggle = () => {
       setToggle(!toggle);
@@ -34,4 +34,4 @@ function ToggleBar({ title, description }) {
    );
 }
 
-export default ToggleBar;
+export default Collapse;

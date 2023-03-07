@@ -7,10 +7,15 @@ import styles from '../../styles/pages/logement.module.scss';
 import Gallery from '../../components/Gallery';
 import Tag from '../../components/Tag';
 import Rating from '../../components/Rating';
+import ToggleBar from '../../components/ToggleBar';
+import NotFound from '../NotFound';
 
 function Logement() {
    const { id } = useParams();
    const logement = logementsList.find((log) => log.id === id);
+   if (!logement) {
+      return <NotFound />;
+   }
    return (
       <div className={pages.wrap}>
          <Gallery
@@ -36,6 +41,10 @@ function Logement() {
                <Rating rate={logement.rating} />
             </div>
          </div>
+         <ToggleBar
+            description={logement.description}
+            equipement={logement.equipments}
+         />
       </div>
    );
 }

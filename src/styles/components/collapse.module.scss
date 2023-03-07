@@ -4,10 +4,12 @@
    background-color: $mainColor;
    padding: 10px 20px;
    display: flex;
+   flex-direction: row;
    justify-content: space-between;
    align-items: center;
    user-select: none;
    border-radius: 5px;
+   width: 100%;
    &__title {
       color: #fff;
       font-weight: 500;
@@ -17,13 +19,31 @@
       cursor: pointer;
    }
    &__chevron {
-      transition: all 0.5s ease;
       display: flex;
       align-self: center;
-      justify-self: center;
-      &__active {
+      justify-content: flex-end;
+      & img {
+         transition: all 0.5s ease;
+      }
+      &__active img {
          transform: rotate(-180deg);
       }
+   }
+   &__name {
+      font-size: 26px;
+      color: white;
+      font-weight: 500;
+      line-height: 25.67px;
+   }
+}
+
+.toggleWrap {
+   display: flex;
+   gap: 76px;
+   flex-direction: row;
+   margin: 26px 0;
+   & div {
+      width: 100%;
    }
 }
 
@@ -44,6 +64,12 @@
    }
    &__list {
       list-style-type: none;
+   }
+   &__txt {
+      list-style-type: none;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 25.67px;
    }
 }
 
