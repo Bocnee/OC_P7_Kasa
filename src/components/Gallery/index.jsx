@@ -5,31 +5,40 @@ import chevronLeft from '../../assets/chevronGalleryL.svg';
 
 import styles from '../../styles/components/gallery.module.scss';
 
+const delay = 4000;
+
 function Gallery({ pictures, title }) {
-   const [current, setCurrent] = useState(0);
+   const [index, setIndex] = useState(0);
    const timer = useRef(null);
-   const auto = useState(true);
    const length = pictures.length;
 
-   const nextSlide = () => {
-      setCurrent(current === length - 1 ? 0 : current + 1);
-   };
-
-   const previousSlide = () => {
-      setCurrent(current === 0 ? length - 1 : current - 1);
-   };
-
-   useEffect(() => {
+   function resetTimeout() {
       if (timer.current) {
          clearTimeout(timer.current);
       }
-      timer.current = setTimeout(() => {
-         if (auto) {
-            setCurrent((t) => (t === length - 1 ? 0 : t + 1));
-         }
-      }, 5000);
-      return () => clearTimeout(timer.current);
-   }, [auto, length]);
+   }
+
+   useEffect(() => {
+      resetTimeout();
+      timer.current = setTimeout(
+         () =>
+            setIndex((prevIndex) =>
+               prevIndex === length - 1 ? 0 : prevIndex + 1
+            ),
+         delay
+      );
+      return () => {
+         resetTimeout();
+      };
+   }, [index, length]);
+
+   const nextSlide = () => {
+      setIndex(index === length - 1 ? 0 : index + 1);
+   };
+
+   const previousSlide = () => {
+      setIndex(index === 0 ? length - 1 : index - 1);
+   };
 
    return (
       <div className={styles.galleryWrap}>
@@ -49,27 +58,36 @@ function Gallery({ pictures, title }) {
                onClick={nextSlide}
             />
          ) : null}
-         {pictures.map((pic, index) => (
-            <div
-               key={index}
-               className={
-                  index === current
-                     ? `${styles.imgWrap} ${styles.imgWrap__current}`
-                     : styles.imgWrap
-               }>
-               {index === current && (
-                  <img
-                     draggable="false"
-                     className={styles.img}
-                     src={pic}
-                     alt={title}
-                  />
-               )}
+         {length > 1 ? (
+            <div className={styles.dotsWrap}>
+               {pictures.map((_, i) => (
+                  <div
+                     key={i}
+                     className={
+                        i === index
+                           ? `${styles.dotsWrap__dot} ${styles.dotsWrap__dot__active}`
+                           : styles.dotsWrap__dot
+                     }
+                     onClick={() => setIndex(i)}></div>
+               ))}
             </div>
-         ))}
+         ) : null}
+         <div
+            className={styles.imgWrap}
+            style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}>
+            {pictures.map((pic, index) => (
+               <img
+                  draggable="false"
+                  className={styles.img}
+                  src={pic}
+                  alt={title}
+                  key={index}
+               />
+            ))}
+         </div>
          {length > 1 ? (
             <p className={styles.text}>
-               {current + 1}/{length}
+               {index + 1}/{length}
             </p>
          ) : null}
       </div>
