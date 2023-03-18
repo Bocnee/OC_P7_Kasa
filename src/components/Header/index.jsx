@@ -10,14 +10,16 @@ function Header() {
    return (
       <header className={classes.headerWrap}>
          <div className={classes.headerFlex}>
-            <h1 className={classes.logoWrap}>
-               <img
-                  draggable="false"
-                  className={classes.logoWrap__logo}
-                  src={logo}
-                  alt="Logo de Kasa, Kasa écrit en toute lettre avec une maison pour remplacer le premier A"
-               />
-            </h1>
+            <NavLink to="/">
+               <h1 className={classes.logoWrap}>
+                  <img
+                     draggable="false"
+                     className={classes.logoWrap__logo}
+                     src={logo}
+                     alt="Logo de Kasa, Kasa écrit en toute lettre avec une maison pour remplacer le premier A"
+                  />
+               </h1>
+            </NavLink>
             <nav className={classes.navWrap}>
                <NavLink
                   className={

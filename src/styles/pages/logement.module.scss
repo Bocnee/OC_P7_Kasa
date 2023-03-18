@@ -1,3 +1,7 @@
+.descriptionWrap {
+   width: 60%;
+}
+
 .title {
    font-weight: 500;
    font-size: 36px;
@@ -38,6 +42,10 @@
 }
 
 @media screen and (max-width: 750px) {
+   .descriptionWrap {
+      width: 100%;
+   }
+
    .title {
       font-size: 18px;
       margin-top: 15px;
